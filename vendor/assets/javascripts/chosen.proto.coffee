@@ -330,6 +330,9 @@ class @Chosen extends AbstractChosen
 
       this.search_field_scale()
 
+  new_value_is_valid: ->
+    (this.options.new_value_regex || /.*/).test(this.get_search_field_value())
+
   results_reset: ->
     this.reset_single_select_options()
     @form_field.options[0].selected = true

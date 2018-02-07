@@ -49,6 +49,8 @@ $ ->
   # enable chosen js
   $('.chosen-select').chosen
     allow_single_deselect: true
+    allow_new_values: true
+    new_value_regex: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     no_results_text: 'No results matched'
     width: '200px'
 ```

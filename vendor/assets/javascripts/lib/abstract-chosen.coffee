@@ -256,6 +256,12 @@ class AbstractChosen
         @mouse_on_container = false
         break
       when 13 # enter
+        if this.options.allow_new_values && this.new_value_is_valid()
+          new_value = document.createElement('option')
+          new_value.value = 'new_value___' + this.get_search_field_value()
+          new_value.text = this.get_search_field_value()
+          @form_field.prepend(new_value)
+          this.results_update_field()
         evt.preventDefault() if @results_showing
         break
       when 27 # escape
